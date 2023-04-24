@@ -55,7 +55,7 @@ export default function Signup() {
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
-      toast.success('Signup was successful')
+      toast.success('Account successfully created')
 
       navigate('/')
     } catch (error) {
