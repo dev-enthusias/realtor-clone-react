@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router';
 
 export default function OAuth() {
   const navigate = useNavigate();
-  
+
   async function onAuthClick() {
     try {
       const auth = getAuth();
@@ -29,7 +29,9 @@ export default function OAuth() {
 
       navigate('/');
     } catch (error) {
-      toast.error('Authorization by Google failed');
+      toast.error('Authorization by google failed', {
+        toastId: 'error',
+      });
     }
   }
 

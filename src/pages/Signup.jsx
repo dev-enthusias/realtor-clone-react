@@ -23,7 +23,7 @@ export default function Signup() {
 
   const { name, email, password } = formData;
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   //React Input Control Function
   function onChange(e) {
@@ -55,11 +55,15 @@ export default function Signup() {
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
-      toast.success('Account successfully created')
+      toast.success('Account successfully created', {
+        toastId: 'success',
+      });
 
-      navigate('/')
+      navigate('/');
     } catch (error) {
-      toast.error("Something went wrong with the registeration")
+      toast.error('Something went wrong with the registeration', {
+        toastId: 'error',
+      });
     }
   }
 
