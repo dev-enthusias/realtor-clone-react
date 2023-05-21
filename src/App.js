@@ -25,7 +25,9 @@ function App() {
           <Route path='/offers' element={<Offers />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/create-listing' element={<CreateListing />} />
+          <Route path='/create-listing' element={<PrivateRoute />}>
+            <Route path='/create-listing' element={<CreateListing />} />
+          </Route>
         </Routes>
         <ToastContainer
           position='bottom-center'
