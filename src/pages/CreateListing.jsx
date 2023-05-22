@@ -77,7 +77,7 @@ function CreateListing() {
   const onSubmit = async e => {
     e.preventDefault();
     setLoading(true);
-    
+
     if (+discountedPrice >= +regularPrice) {
       setLoading(false);
       toast.error('Discounted price needs to be less than regular price');
@@ -158,6 +158,7 @@ function CreateListing() {
       geolocation,
       imgUrls,
       timestamp: serverTimestamp(),
+      userRef: auth.currentUser.uid,
     };
 
     delete formDataCopy.images;
